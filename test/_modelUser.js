@@ -88,7 +88,7 @@ describe('User Model', () => {
         done();
       }
     );
-  });
+  }); 
 
   // Remove a User
   it('Remove a User', (done) => {
