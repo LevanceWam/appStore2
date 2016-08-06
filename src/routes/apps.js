@@ -12,7 +12,9 @@ module.exports = (express) => {
         id: 9,
         title: 'Instagram',
         description: 'Facebook Owns This',
-        releaseDate: '5/23/06'
+        releaseDate: '5/23/06',
+        budget: '$12m',
+        popular: 'It Goes down in the DM'
       },
       {
         id: 66,
@@ -51,7 +53,7 @@ module.exports = (express) => {
         description: 'Facebook Owns This',
         releaseDate: '5/23/06',
         budget: '$12m',
-        popular: 'No'
+        popular: 'It Goes down in the DM'
       });
   });
 
