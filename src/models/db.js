@@ -19,29 +19,27 @@ const user = sequelize.define('user', {
   name:{
     type: sequelize.STRING,
   },
-  age:{
-    type: sequelize.INTEGER,
-  },
-  hobby:{
-    type: sequelize.STRING,
-  },
 });
 
-const course = sequelize.define('user', {
+const app = sequelize.define('app', {
   name:{
     type: sequelize.STRING,
   },
-  code:{
-    type: sequelize.INTEGER,
+  description:{
+    type: sequelize.STRING,
+  },
+  releaseDate:{
+    type: sequelize.STRING,
   },
 
 });
 
-course.hasMany(user, {
-  foreignKey: 'courseID',
+user.hasMany(app, {
+  foreignKey: 'userID',
 });
 
 sequelize.sync();
 
 exports.sequelize = sequelize;
 exports.user = user;
+exports.app = app;
