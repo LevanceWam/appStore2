@@ -1,40 +1,50 @@
-const db = require('./db.js');
+const db = require('./db');
 
+//--------------------------
+// create apps
 exports.add = (payload, err, success) => {
-  db.apps.create(payload).then(success).catch(err);
-}
+  db.app.create(payload).then(success).catch(err);
+};
 
+//--------------------------
+// find all apps
 exports.all = (err, success) => {
-  db.apps.findAll().then(success).catch(err);
-}
+  console.log('finding all');
+  db.app.findAll().then(success).catch(err);
+};
 
+//--------------------------
+// find one app
 exports.one = (payload, err, success) => {
-  db.apps.find({
+  db.app.find({
     where: {
-      id: payload.id
+      id: payload.id,
     },
-    // Find all relations defined in sequelize
     include: [{
       all: true,
       nested: true,
     }],
   }).then(success).catch(err);
-}
+};
 
+//--------------------------
+// delete apps
 exports.remove = (payload, err, success) => {
-  db.apps.destroy({
+  db.app.destroy({
     where: {
       id: payload.id,
-    }
+    },
   }).then(success).catch(err);
-}
+};
 
+//--------------------------
+// update app
 exports.update = (payload, err, success) => {
-    db.apps.find({
-      where: {
-        id: payload.id,
-      }
-    }).then((existingData) => {
-      existingData.updateAttributes(payload).then(success).catch(err);
-    }).catch(err);
-}
+  db.app.find({
+    where: {
+      id: payload.id,
+    },
+  }).then((existingData) => {
+    existingData.updateAttributes(payload).then(success).catch(err);
+  }).catch(err);
+};

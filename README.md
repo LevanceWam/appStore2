@@ -26,6 +26,19 @@ nodemon src/server.js
 This will start the server on port 3000
 ```
 
+# Dynamic api
+
+```
+To use the crud feature of the Dynamic api you need to have postman downloaded.
+
+once you have postman and open it make sure that you have you server running
+
+nodemon src/server.js
+
+and inside of your url bar have make sure to have the right url.
+
+```
+
 # Unit Testing (command line)
 
 ```
@@ -82,4 +95,17 @@ id: 8,
 name: 'Priscilla',
 age: '23',
 occupation: 'Head Chef',
+```
+
+
+GET /api/v1/users/:id/apps
+```
+When you go to this route this route will take you to see all of the users apps that are connected to the users id
+
+userID
+title
+description
+releaseDate
+budget
+popular
 ```

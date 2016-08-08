@@ -1,4 +1,4 @@
-const Sequelize =  require('sequelize');
+const Sequelize = require('sequelize');
 
 require('dotenv').config();
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
@@ -10,28 +10,47 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     min: 0,
     idle: 10000,
   },
-  logging:fasle
+  logging: false,
 });
 
 
-
+// This is the table creation for my user and all of its properties
+// Make sure the datatypes are correct
+// MAKE SURE THAT THE SEQUELIZE DATATYPE IS CAPTIALIZE
 const user = sequelize.define('user', {
-  name:{
-    type: sequelize.STRING,
+  name: {
+    type: Sequelize.STRING,
+  },
+  age: {
+    type: Sequelize.INTEGER,
+  },
+  hobby: {
+    type: Sequelize.STRING,
+  },
+  occupation: {
+    type: Sequelize.STRING,
   },
 });
 
+// This is the table creation for my apps and all of its properties
+// Make sure the datatypes are correct
+// MAKE SURE THAT THE SEQUELIZE DATATYPE IS CAPTIALIZE
 const app = sequelize.define('app', {
-  name:{
-    type: sequelize.STRING,
+  title: {
+    type: Sequelize.STRING,
   },
-  description:{
-    type: sequelize.STRING,
+  description: {
+    type: Sequelize.STRING,
   },
-  releaseDate:{
-    type: sequelize.STRING,
+  releaseDate: {
+    type: Sequelize.DATE,
   },
-
+  budget: {
+    type: Sequelize.STRING,
+  },
+  popular: {
+    type: Sequelize.STRING,
+  },
 });
 
 user.hasMany(app, {

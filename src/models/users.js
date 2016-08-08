@@ -1,39 +1,53 @@
-const db = require('./db.js');
+const db = require('./db');
 
+//--------------------------
+// create users
 exports.add = (payload, err, success) => {
-  db.users.create(payload).then(success).catch(err);
-}
+  db.user.create(payload).then(success).catch(err);
+};
+
+//--------------------------
+// find all users
 
 exports.all = (err, success) => {
-  db.users.findAll().then(success).catch(err);
-}
+  db.user.findAll().then(success).catch(err);
+};
+
+//--------------------------
+// find one users
 
 exports.one = (payload, err, success) => {
-  db.users.find({
+  db.user.find({
     where: {
-      id: payload.id
+      id: payload.id,
     },
     include: [{
       all: true,
       nested: true,
     }],
   }).then(success).catch(err);
-}
+};
+
+//--------------------------
+// Delete one User
 
 exports.remove = (payload, err, success) => {
-  db.users.destroy({
+  db.user.destroy({
     where: {
       id: payload.id,
-    }
+    },
   }).then(success).catch(err);
-}
+};
+
+//--------------------------
+// Updated users
 
 exports.update = (payload, err, success) => {
-    db.users.find({
-      where: {
-        id: payload.id,
-      }
-    }).then((existingData) => {
-      existingData.updateAttributes(payload).then(success).catch(err);
-    }).catch(err);
-}
+  db.user.find({
+    where: {
+      id: payload.id,
+    },
+  }).then((existingData) => {
+    existingData.updateAttributes(payload).then(success).catch(err);
+  }).catch(err);
+};

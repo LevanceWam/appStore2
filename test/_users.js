@@ -6,7 +6,7 @@ describe('User Routes', () => {
   var user;
 
   beforeEach(() => {
-    server = require('../src/server.js');
+    server = require('../src/server');
   });
 
   afterEach(() => {
@@ -23,11 +23,11 @@ describe('User Routes', () => {
         const users = res.body;
 
 
-        this.user = users[0]
+        this.user = users[0];
 
-        expect(users.length).to.be.above(0)
+        expect(users.length).to.be.above(0);
       })
-      .end(done)
+      .end(done);
   });
 
   // This test is for one user and is checking for its properties
@@ -38,12 +38,11 @@ describe('User Routes', () => {
       .expect('Content-Type', /json/)
       .expect((res) => {
         const user = res.body;
-        expect(user).to.have.property('id')
-        expect(user).to.have.property('name')
-        expect(user).to.have.property('age')
-        expect(user).to.have.property('occupation')
+        expect(user).to.have.property('id');
+        expect(user).to.have.property('name');
+        expect(user).to.have.property('age');
+        expect(user).to.have.property('occupation');
       })
-      .end(done)
+      .end(done);
   });
-
 });

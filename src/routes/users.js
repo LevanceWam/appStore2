@@ -1,5 +1,4 @@
 module.exports = (express) => {
-
   const router = express.Router();
 
 
@@ -29,9 +28,9 @@ module.exports = (express) => {
         name: 'Priscilla',
         age: '23',
         occupation: 'Head Chef',
-      }
+      },
     ]);
-    });
+  });
 
 
     // This route is going to a specific user
@@ -46,4 +45,4 @@ module.exports = (express) => {
 
 
   return router;
-}
+};
