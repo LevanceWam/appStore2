@@ -1,16 +1,19 @@
 const db = require('./db');
+const util = require('../../lib/util');
 
 //--------------------------
 // create apps
 exports.add = (payload, err, success) => {
   db.app.create(payload).then(success).catch(err);
+  util.debug('New app', payload);
 };
 
 //--------------------------
 // find all apps
 exports.all = (err, success) => {
-  console.log('finding all');
+  util.debug('finding all', success);
   db.app.findAll().then(success).catch(err);
+  util.debug('finding all apps', success);
 };
 
 //--------------------------
@@ -25,6 +28,7 @@ exports.one = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
+  util.debug('finding one app', success);
 };
 
 //--------------------------
@@ -35,6 +39,7 @@ exports.remove = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
+  util.debug('deleted my app', success);
 };
 
 //--------------------------
@@ -47,4 +52,5 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
+  util.debug('updated the app', success);
 };

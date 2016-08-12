@@ -1,9 +1,11 @@
 const db = require('./db');
+const util = require('../../lib/util');
 
 //--------------------------
 // create users
 exports.add = (payload, err, success) => {
   db.user.create(payload).then(success).catch(err);
+  util.debug('Created new user', payload);
 };
 
 //--------------------------
@@ -11,6 +13,7 @@ exports.add = (payload, err, success) => {
 
 exports.all = (err, success) => {
   db.user.findAll().then(success).catch(err);
+  util.debug('All users found', success);
 };
 
 //--------------------------
@@ -26,6 +29,7 @@ exports.one = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
+  util.debug('Found one user', success);
 };
 
 //--------------------------
@@ -37,6 +41,7 @@ exports.remove = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
+  util.debug('Deleted user', success);
 };
 
 //--------------------------
@@ -50,4 +55,5 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
+  util.debug('Update success', success);
 };

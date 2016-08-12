@@ -1,4 +1,6 @@
 const users = require('../../models/users');
+const util = require('../../../lib/util');
+
 
 module.exports = (express) => {
   const router = express.Router();
@@ -12,7 +14,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('Look at this lonely loser');
+    util.debug('Look at this lonely user', req.params.id);
   });
 
   //----------------------------------
@@ -24,7 +26,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('look at all of these people');
+    util.debug('look at all of these users -route', req.params.id);
   });
 
   //----------------------------------
@@ -37,7 +39,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('Old thing with some new features');
+    util.debug('User updated in the routes', req.params.id);
   });
 
   //----------------------------------
@@ -49,7 +51,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('Fresh meat');
+    util.debug('I found this one app', req.params.id);
   });
 
   //----------------------------------
@@ -62,7 +64,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-  console.log('Bye Fiolisha');
+    util.debug('Bye user -route', req.params.id);
   });
 
   //----------------------------------
@@ -76,7 +78,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data.apps);
     });
-    console.log('All of this users apps have been found');
+    util.debug('All of this users apps have been found', req.params.id);
   });
 
 

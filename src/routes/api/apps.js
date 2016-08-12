@@ -1,4 +1,6 @@
 const apps = require('../../models/apps');
+const util = require('../../../lib/util');
+
 
 module.exports = (express) => {
   const router = express.Router();
@@ -13,7 +15,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('I found this one thing and its ok');
+    util.debug('I found this one app', req.params.id);
   });
 
   // -----------------------------------------
@@ -26,7 +28,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('Wow I found all of them');
+    util.debug('Wow I found all of the apps', res.status);
   });
 
   // -----------------------------------------
@@ -39,7 +41,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('Look at me I got some features');
+    util.debug('Update apps route', req.body);
   });
 
 // -----------------------------------------
@@ -51,7 +53,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('An app was created');
+    util.debug('An app was created route', req.body);
   });
 
 //----------------------------------
@@ -64,7 +66,7 @@ module.exports = (express) => {
     }, (data) => {
       res.status(200).json(data);
     });
-    console.log('Good bye')
+    util.debug('Good bye app -route', req.params.id)
   });
   return router;
 };

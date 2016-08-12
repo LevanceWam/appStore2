@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const util = require('../lib/util');
+require('terminal-colors');
 
 const app = express();
 
@@ -14,7 +16,7 @@ app.use('/api/v1', require('./routes/api/users')(express));
 
 
 const server = app.listen(port, () => {
-  console.log('server active on', port)
+  util.debug('server active on', port);
 });
 
 module.exports = server;
