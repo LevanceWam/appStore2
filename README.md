@@ -72,10 +72,11 @@ First type in:
 ```
 DEBUG=true nodemon src/server.js
 ```
+
 Once this has started you will see the package terminal-color take effect.
 Next up you are going to want to open postman with the Debug server running.
 once in postman try creating, deleting, and updating and finding and messages will be shown in the
-terminal.
+terminal
 
 # EndPoints
 GET /api/v1/apps
