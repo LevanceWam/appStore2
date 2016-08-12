@@ -136,3 +136,18 @@ releaseDate
 budget
 popular
 ```
+
+#Debuging endpoint
+```
+------------------------------
+server active on 3000
+
+------------------------------
+ Thu Aug 11 2016 23:19:46 GMT-0400 (EDT)
+
+------------------------------
+I found this one thing and its ok 1
+
+------------------------------
+ Thu Aug 11 2016 23:20:01 GMT-0400 (EDT)
+```
