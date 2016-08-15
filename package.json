@@ -22,11 +22,11 @@
     "express": "^4.14.0",
     "mysql": "^2.11.1",
     "sequelize": "^3.23.6",
-    "terminal-colors": "^0.1.4"
+    "terminal-colors": "^0.1.4",
+    "dotenv": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "dotenv": "^2.0.0",
     "eslint": "3.2.2",
     "eslint-config-airbnb": "10.0.0",
     "eslint-plugin-import": "1.12.0",
