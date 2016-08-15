@@ -1,3 +1,6 @@
+// I dont want to break the code chapman gave me so I will make minor changes but i will not touch
+// anything i am not sure about
+
 const expect = require('chai').expect;
 const request = require('supertest');
 
@@ -6,7 +9,7 @@ describe('App Routes', () => {
   var app;
 
   beforeEach(() => {
-    server = require('../src/server.js');
+    server = require('../src/server');
   });
 
   afterEach(() => {

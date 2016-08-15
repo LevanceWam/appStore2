@@ -25,7 +25,6 @@ describe('App Model', () => {
 
   // Add a App
   it('Adds a new App', (done) => {
-
     // Generate a fake App with a random title
     const fakeApp = { title: faker.name.firstName() };
 
@@ -35,7 +34,6 @@ describe('App Model', () => {
         throw new Error(err);
       },
       (app) => {
-
         // Save the returned data for later use in tests
         this.tempApp = app.dataValues;
 
@@ -48,7 +46,6 @@ describe('App Model', () => {
 
   // Find a App
   it('Find a App', (done) => {
-
     // Generate a fake App with a random title
     const targetApp = this.testApps[0];
 
@@ -58,7 +55,6 @@ describe('App Model', () => {
         throw new Error(err);
       },
       (app) => {
-
         // App.title returned from model should match app.title supplied
         expect(app.title).to.be.equal(targetApp.title);
         done();
@@ -68,7 +64,6 @@ describe('App Model', () => {
 
   // Update a App
   it('Update a App', (done) => {
-
     // Load in the info for an existing app
     var updateApp = this.tempApp;
 
@@ -92,7 +87,6 @@ describe('App Model', () => {
 
   // Remove a App
   it('Remove a App', (done) => {
-
     // Load in the info for an existing app
     var removeApp = this.tempApp;
     removeApp.force = true;
@@ -103,12 +97,10 @@ describe('App Model', () => {
         throw new Error(err);
       },
       (response) => {
-
         // if successfully removed a 1 should be returned
         expect(response).to.be.equal(1);
         done();
       }
     );
   });
-
 });

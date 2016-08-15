@@ -46,7 +46,6 @@ describe('User Model', () => {
 
   // Find a User
   it('Find a User', (done) => {
-
     // Generate a fake User with a random name
     const targetUser = this.testUsers[0];
 
@@ -56,7 +55,6 @@ describe('User Model', () => {
         throw new Error(err);
       },
       (user) => {
-
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(targetUser.name);
         done();
@@ -66,7 +64,6 @@ describe('User Model', () => {
 
   // Update a User
   it('Update a User', (done) => {
-
     // Load in the info for an existing user
     var updateUser = this.tempUser;
 
