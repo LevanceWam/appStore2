@@ -49,6 +49,18 @@ mocha
 ```
 This will run a series to test and if it runs you are all good
 
+**This is the continuation of unit test**
+
+In this part I added to more unit test that can still be activated with the instructions with the previous unit test.
+
+But, when you run:
+
+```
+DEBUG=true nodemon src.server.js
+```
+ you will Then want to go into postman and use the dynamic api feature that is built in
+ so if the test does not go through the debugger will notify you and let you know what area failed. 
+
 
 #Usage
 First you need to install the new packages we have so make sure to
@@ -72,6 +84,7 @@ First type in:
 ```
 DEBUG=true nodemon src/server.js
 ```
+
 
 Once this has started you will see the package terminal-color take effect.
 Next up you are going to want to open postman with the Debug server running.
