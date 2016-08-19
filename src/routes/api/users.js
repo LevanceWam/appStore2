@@ -1,5 +1,5 @@
 const users = require('../../models/users');
-const util = require('../../../lib/util');
+const util = require('Wamble');
 
 
 module.exports = (express) => {

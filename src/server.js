@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const util = require('../lib/util');
+const util = require('Wamble');
 require('terminal-colors');
 
 const app = express();

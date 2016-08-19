@@ -38,7 +38,7 @@ and inside of your url bar have make sure to have the right url.
 
 
 
-# Unit Testing (command line)
+# Unit Testing
 
 
 To be able to unit test please make sure that the server is off
@@ -59,7 +59,7 @@ But, when you run:
 DEBUG=true nodemon src.server.js
 ```
  you will Then want to go into postman and use the dynamic api feature that is built in
- so if the test does not go through the debugger will notify you and let you know what area failed. 
+ so if the test does not go through the debugger will notify you and let you know what area failed.
 
 
 #Usage

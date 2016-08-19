@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const user = require('../src/models/users');
-const util = require('../lib/util');
+const util = require('Wamble');
 
 let phonyUser = {};
 

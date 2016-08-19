@@ -1,5 +1,5 @@
 const db = require('./db');
-const util = require('../../lib/util');
+const util = require('Wamble');
 
 //--------------------------
 // create apps
