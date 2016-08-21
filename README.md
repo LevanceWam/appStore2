@@ -25,7 +25,7 @@ nodemon src/server.js
 This will start the server on port 3000
 
 
-# Dynamic api
+# Dynamic api  
 
 
 To use the crud feature of the Dynamic api you need to have postman downloaded.
