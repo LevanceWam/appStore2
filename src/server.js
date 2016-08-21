@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const util = require('Wamble');
+require('dotenv').config({ silent: true });
 require('terminal-colors');
 
 const app = express();
