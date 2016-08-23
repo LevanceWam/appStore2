@@ -9,6 +9,8 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use('/', require('./routes')(express));
+
 
 // This is linking my routes
 app.use('/api/v1', require('./routes/api/apps')(express));
