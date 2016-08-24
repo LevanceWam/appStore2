@@ -164,3 +164,31 @@ I found this one thing and its ok 1
 ------------------------------
  Thu Aug 11 2016 23:20:01 GMT-0400 (EDT)
 ```
+
+#Deployment
+
+First login into server.
+
+```
+ssh username@ipaddress
+```
+Once you are on your server you want to install your packages
+```
+npm i
+```
+install pm2 Globally
+
+```
+npm i -g pm2
+```
+Then start your server with pm2
+
+```
+pm2 start src/server.js
+```
+Now the server will constantly be running
+
+Next you are going to want to push any changes that have made so type
+ ```
+ git push digitalOcean master                               
+ ```
