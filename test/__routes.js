@@ -67,7 +67,7 @@ const routes = [
     method: 'get',
   },
 ];
-// Need addition for commit
+
 describe('Test the routes', () => {
   for (let rIndex = 0; rIndex < routes.length; rIndex++) {
     it(routes[rIndex].description, () => {
