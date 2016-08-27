@@ -6,10 +6,9 @@ require('terminal-colors');
 const app = express();
 
 // Setting my port to be constant
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use('/', require('./routes')(express));
 
 
 // This is linking my routes

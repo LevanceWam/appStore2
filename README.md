@@ -137,7 +137,6 @@ age: '23',
 occupation: 'Head Chef',
 ```
 
-
 GET /api/v1/users/:id/apps
 ```
 When you go to this route this route will take you to see all of the users apps that are connected to the users id
